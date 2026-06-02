@@ -94,6 +94,24 @@ export const site = {
   description:
     "Full-stack developer obsessed with AI and clean, minimal interfaces. Building from scratch, contributing to open source and exploring what's possible with LLMs.",
   url: "https://vimzh.dev",
+  keywords: [
+    "vansh",
+    "vimzh",
+    "full-stack developer",
+    "AI engineer",
+    "software engineer",
+    "open source",
+    "LLMs",
+    "web developer",
+    "portfolio",
+  ],
+};
+
+// Browser chrome (meta theme-color) values, kept in sync with the --background
+// token in globals.css for light and dark.
+export const metaThemeColors = {
+  light: "#fafafa",
+  dark: "#1c1c1c",
 };
 
 export const emptyState = "Nothing here yet. Check back soon.";
