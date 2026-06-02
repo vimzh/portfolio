@@ -1,9 +1,12 @@
 import { Schibsted_Grotesk, Geist_Mono } from "next/font/google";
 
 import { Footer } from "@/components/Footer";
+import { JsonLd } from "@/components/JsonLd";
+import { MetaColor } from "@/components/MetaColor";
 import { SelectionColor } from "@/components/SelectionColor";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { profile, site } from "@/lib/data";
+import { metaThemeColors, profile, site } from "@/lib/data";
+import { getProfileJsonLd } from "@/lib/json-ld";
 import "./globals.css";
 
 import type { Metadata, Viewport } from "next";
@@ -25,6 +28,10 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description: site.description,
+  keywords: site.keywords,
+  alternates: {
+    canonical: "/",
+  },
   authors: [{ name: profile.name, url: profile.handleUrl }],
   creator: profile.name,
   openGraph: {
@@ -43,10 +50,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
-    { media: "(prefers-color-scheme: dark)", color: "#1c1c1c" },
-  ],
+  themeColor: metaThemeColors.light,
 };
 
 export default function RootLayout({
@@ -61,6 +65,7 @@ export default function RootLayout({
       className={`${schibstedGrotesk.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <JsonLd data={getProfileJsonLd()} />
         <SelectionColor />
         <ThemeProvider
           attribute="class"
@@ -68,6 +73,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <MetaColor />
           <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-6">
             {children}
             <Footer />
