@@ -1,5 +1,6 @@
 import { About } from "@/components/About";
 import { Contributions } from "@/components/Contributions";
+import { OpenSource } from "@/components/OpenSource";
 import { Projects } from "@/components/Projects";
 import { Work } from "@/components/Work";
 
@@ -10,6 +11,7 @@ export default function Home() {
       <Work />
       <Projects />
       <Contributions />
+      <OpenSource />
     </main>
   );
 }
