@@ -162,4 +162,7 @@
   .reveal-stack > *:nth-child(3) {
     animation-delay: 0.2s;
   }
+  .reveal-stack > *:nth-child(4) {
+    animation-delay: 0.28s;
+  }
 }
