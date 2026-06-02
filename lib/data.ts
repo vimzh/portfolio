@@ -40,6 +40,54 @@ export const work = [
   },
 ];
 
+export type Project = {
+  title: string;
+  description: string;
+  period: string;
+  tags: string[];
+  link: string;
+  repo?: string;
+};
+
+// Placeholder projects. Replace the copy, links, and tags with real work.
+export const projects: Project[] = [
+  {
+    title: "Lumen",
+    description:
+      "A self-hostable LLM gateway that routes requests across providers with caching, fallbacks, and per-key budgets.",
+    period: "2026",
+    tags: ["TypeScript", "Hono", "Postgres", "Redis"],
+    link: "https://github.com/vimzh/lumen",
+    repo: "https://github.com/vimzh/lumen",
+  },
+  {
+    title: "Quill",
+    description:
+      "A minimal markdown editor with local-first sync and a command palette, built for fast daily notes.",
+    period: "2025",
+    tags: ["Next.js", "tRPC", "SQLite"],
+    link: "https://github.com/vimzh/quill",
+    repo: "https://github.com/vimzh/quill",
+  },
+  {
+    title: "Drift",
+    description:
+      "A realtime collaborative whiteboard with CRDT state and presence, no backend lock-in.",
+    period: "2025",
+    tags: ["React", "Yjs", "WebRTC"],
+    link: "https://github.com/vimzh/drift",
+    repo: "https://github.com/vimzh/drift",
+  },
+  {
+    title: "ctx",
+    description:
+      "A CLI that packs a repository into an LLM-ready context bundle with token-aware trimming.",
+    period: "2024",
+    tags: ["Go", "Tree-sitter"],
+    link: "https://github.com/vimzh/ctx",
+  },
+];
+
 export const site = {
   name: "vansh",
   title: "vansh, full-stack developer",
