@@ -6,6 +6,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 The `@AGENTS.md` import above is load-bearing: this repo runs **Next.js 16.2.7 + React 19**, which has breaking changes versus older training data. Before writing Next.js code, read the relevant guide under `node_modules/next/dist/docs/` (e.g. `01-app/...`) rather than assuming older App Router conventions.
 
+## Browser automation
+
+Do not use the Claude in Chrome browser tools (`mcp__claude-in-chrome__*`) — navigation, screenshots, page automation — unless explicitly asked to. Verify changes with `bun run lint`, `bun run build`, and type checks instead.
+
 ## Commands
 
 Package manager is **bun** (lockfile is `bun.lock`); never use npm/yarn/pnpm.
