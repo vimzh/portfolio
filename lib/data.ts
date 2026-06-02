@@ -88,6 +88,55 @@ export const projects: Project[] = [
   },
 ];
 
+export type Contribution = {
+  owner: string;
+  repo: string;
+  stars: string;
+  description: string;
+  status: string;
+  link: string;
+};
+
+// Open-source contributions. `link` points at each repo for now; swap it for the
+// specific PR URL when you have it.
+export const openSource: Contribution[] = [
+  {
+    owner: "fb55",
+    repo: "htmlparser2",
+    stars: "4.8k",
+    description:
+      "Add WebWritableStream for Web Streams API support, enabling piping fetch() responses directly into the parser",
+    status: "Merged",
+    link: "https://github.com/fb55/htmlparser2",
+  },
+  {
+    owner: "inokawa",
+    repo: "virtua",
+    stars: "3.5k",
+    description:
+      "Add Base UI ScrollArea story for virtualized scrolling with custom scrollbars",
+    status: "Merged",
+    link: "https://github.com/inokawa/virtua",
+  },
+  {
+    owner: "aymericzip",
+    repo: "intlayer",
+    stars: "636",
+    description:
+      "Replace native textarea with contentEditable div for inline autocomplete ghost text rendering",
+    status: "Merged",
+    link: "https://github.com/aymericzip/intlayer",
+  },
+];
+
+// Smaller contributions shown as a compact overflow line under the detailed
+// list above. Verify each link points where you want.
+export const moreContributions = [
+  { name: "supermemory", link: "https://github.com/supermemoryai/supermemory" },
+  { name: "kandev", link: "https://github.com/kandev" },
+  { name: "payloadcms", link: "https://github.com/payloadcms/payload" },
+];
+
 export const site = {
   name: "vansh",
   title: "vansh, full-stack developer",
