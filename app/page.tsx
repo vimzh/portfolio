@@ -1,5 +1,6 @@
 import { About } from "@/components/About";
 import { Contributions } from "@/components/Contributions";
+import { Projects } from "@/components/Projects";
 import { Work } from "@/components/Work";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <main className="reveal-stack flex flex-1 flex-col gap-16 pt-24">
       <About />
       <Work />
+      <Projects />
       <Contributions />
     </main>
   );
