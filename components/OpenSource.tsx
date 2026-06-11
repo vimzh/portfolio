@@ -66,7 +66,6 @@ export const OpenSource = () => {
               <TextLink href={item.link}>{item.name}</TextLink>
             </Fragment>
           ))}
-          , and more
         </li>
       </ul>
     </section>

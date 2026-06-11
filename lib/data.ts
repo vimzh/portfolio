@@ -1,3 +1,5 @@
+import type { Project } from "@/types/data";
+
 export const profile = {
   avatars: ["/avatar.jpeg", "/avatar-2.jpeg", "/avatar-3.jpeg"],
   name: "vansh",
@@ -18,6 +20,7 @@ export const socials = [
 
 export const nav = [
   { label: "Home", href: "/" },
+  { label: "Projects", href: "/projects" },
   { label: "Blogs", href: "/blogs" },
   { label: "Components", href: "/components" },
 ];
@@ -40,25 +43,16 @@ export const work = [
   },
 ];
 
-export type Project = {
-  title: string;
-  description: string;
-  period: string;
-  tags: string[];
-  link: string;
-  repo?: string;
-};
 
 // Placeholder projects. Replace the copy, links, and tags with real work.
 export const projects: Project[] = [
   {
-    title: "Lumen",
+    title: "Jottr",
     description:
-      "A self-hostable LLM gateway that routes requests across providers with caching, fallbacks, and per-key budgets.",
-    period: "2026",
-    tags: ["TypeScript", "Hono", "Postgres", "Redis"],
-    link: "https://github.com/vimzh/lumen",
-    repo: "https://github.com/vimzh/lumen",
+      "Open-source note-taking app with AI-powered search and summarization.",
+    tags: ["TypeScript", "Next.js", "convex", "Vercel"],
+    link: "https://github.com/vimzh/jottr",
+    repo: "https://github.com/vimzh/jottr",
   },
   {
     title: "Quill",

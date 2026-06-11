@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main className="flex flex-1 flex-col pt-24">
+    <main className="reveal-stack flex flex-1 flex-col pt-24">
       <div className="flex w-full flex-col gap-6">
         <NavBar />
         <h1 className="text-xl font-semibold tracking-tight text-foreground">

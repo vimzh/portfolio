@@ -3,7 +3,7 @@ import { ArrowUpRight01Icon } from "@hugeicons/core-free-icons";
 import { Icon } from "@/components/Icon";
 import { TextLink } from "@/components/TextLink";
 
-import type { Project } from "@/lib/data";
+import type { Project } from "@/types/data";
 
 type ProjectCardProps = {
   project: Project;
