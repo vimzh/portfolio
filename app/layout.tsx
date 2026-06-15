@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { metaThemeColors, profile, site } from "@/lib/data";
 import { getProfileJsonLd } from "@/lib/json-ld";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 import type { Metadata, Viewport } from "next";
 
@@ -73,6 +74,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Analytics />
           <MetaColor />
           <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-6">
             {children}
