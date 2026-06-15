@@ -14,7 +14,13 @@ export const Work = () => {
           >
             <div className="flex items-baseline gap-1.5 text-sm">
               <span className="text-base font-medium text-foreground">
-                {item.company}
+                {item.company === "Stealth" ? (
+                  <span className="blur-[3px] transition-all select-none pointer-events-none">
+                    {item.company}
+                  </span>
+                ) : (
+                  item.company
+                )}
               </span>
               <span className="text-muted-foreground">/</span>
               <span className="text-muted-foreground">{item.role}</span>
