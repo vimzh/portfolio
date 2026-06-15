@@ -29,12 +29,12 @@ export const work = [
   {
     company: "ArtifexOne",
     role: "AI Engineer",
-    period: "Feb 2026 – Present",
+    period: "Feb 2026 – May 2026",
   },
   {
     company: "Astroraag",
     role: "Software Intern",
-    period: "Feb 2025 – Jun 2025",
+    period: "Feb 2026 – Jun 2026",
   },
   {
     company: "Stealth",
