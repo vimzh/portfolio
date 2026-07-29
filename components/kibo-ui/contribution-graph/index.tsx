@@ -332,7 +332,7 @@ export const ContributionGraphBlock = ({
         'data-[level="1"]:fill-foreground/30',
         'data-[level="2"]:fill-foreground/50',
         'data-[level="3"]:fill-foreground/70',
-        'data-[level="4"]:fill-foreground/90',
+        'data-[level="4"]:fill-foreground/80',
         className
       )}
       data-count={activity.count}
