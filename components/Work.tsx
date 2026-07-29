@@ -3,7 +3,7 @@ import { work } from "@/lib/data";
 export const Work = () => {
   return (
     <section className="flex w-full flex-col gap-6">
-      <h2 className="text-xl font-semibold tracking-tight text-foreground">
+      <h2 className="font-heading text-xl font-normal tracking-tight text-foreground">
         work
       </h2>
       <ul className="flex flex-col gap-4">

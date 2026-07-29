@@ -3,6 +3,8 @@ export type Project = {
   description: string;
   period?: string;
   tags: string[];
+  image: string;
+  imageAlt: string;
   link: string;
   repo?: string;
 };

@@ -1,4 +1,5 @@
 import { Schibsted_Grotesk, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
@@ -20,6 +21,12 @@ const schibstedGrotesk = Schibsted_Grotesk({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const eightiesComeback = localFont({
+  src: "./fonts/EightiesComebackVAR-Regular.ttf",
+  variable: "--font-eighties-comeback",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -63,9 +70,9 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${schibstedGrotesk.variable} ${geistMono.variable} antialiased`}
+      className={`${schibstedGrotesk.variable} ${geistMono.variable} ${eightiesComeback.variable} antialiased`}
     >
-      <body className="flex min-h-dvh flex-col">
+      <body suppressHydrationWarning className="flex min-h-dvh flex-col">
         <JsonLd data={getProfileJsonLd()} />
         <SelectionColor />
         <ThemeProvider

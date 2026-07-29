@@ -14,7 +14,7 @@ export const Contributions = async () => {
 
   return (
     <section className="flex w-full flex-col gap-6">
-      <h2 className="text-xl font-semibold tracking-tight text-foreground">
+      <h2 className="font-heading text-xl font-normal tracking-tight text-foreground">
         contributions
       </h2>
       {data.length > 0 ? (

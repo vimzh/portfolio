@@ -46,5 +46,5 @@ App Router project at the repo root (no `src/` directory). App code lives in `ap
 ### Fonts
 
 Fonts are loaded in `app/layout.tsx` via `next/font/google` and wired through CSS variables consumed by `globals.css`:
-- `--font-sans` → **Schibsted Grotesk** (drives `font-sans` and `font-heading`)
+- `--font-sans` → **Schibsted Grotesk** (drives `font-sans`); `--font-heading` → **Eighties Comeback**
 - `--font-geist-mono` → **Geist Mono** (drives `font-mono`)

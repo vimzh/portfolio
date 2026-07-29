@@ -328,11 +328,11 @@ export const ContributionGraphBlock = ({
   return (
     <rect
       className={cn(
-        'data-[level="0"]:fill-muted',
-        'data-[level="1"]:fill-muted-foreground/20',
-        'data-[level="2"]:fill-muted-foreground/40',
-        'data-[level="3"]:fill-muted-foreground/60',
-        'data-[level="4"]:fill-muted-foreground/80',
+        'data-[level="0"]:fill-border',
+        'data-[level="1"]:fill-foreground/30',
+        'data-[level="2"]:fill-foreground/50',
+        'data-[level="3"]:fill-foreground/70',
+        'data-[level="4"]:fill-foreground/90',
         className
       )}
       data-count={activity.count}
