@@ -36,6 +36,8 @@ App Router project at the repo root (no `src/` directory). App code lives in `ap
 
 **Copy voice:** keep all user-facing text natural and human. Do not use em dashes (`—`); use commas, periods, or separate sentences instead. Avoid corporate or AI-sounding filler.
 
+Blog posts are the exception to the `lib/data.ts` rule. Author them as MDX files under `content/blog/`; frontmatter is validated by `source.config.ts`, and `lib/blog.ts` exposes the typed collection. The generated `.source/` directory is ignored and must not be edited manually.
+
 ### Styling & design system
 
 - **Tailwind v4, CSS-first.** There is no `tailwind.config.js`. All configuration lives in `app/globals.css` via `@import "tailwindcss"` and `@theme inline { ... }`. PostCSS uses `@tailwindcss/postcss`.

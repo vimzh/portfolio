@@ -43,7 +43,7 @@ export const OpenSource = () => {
                   <Icon icon={StarIcon} aria-hidden="true" className="size-3" />
                   {item.stars}
                 </span>
-                <span className="inline-flex items-center gap-1 rounded-md border px-1.5 py-0.5 text-xs text-muted-foreground">
+                <span className="inline-flex items-center gap-1 rounded-md border border-violet-500/30 px-1.5 py-0.5 text-xs text-violet-700 dark:border-violet-400/30 dark:text-violet-300">
                   <Icon
                     icon={GitMergeIcon}
                     aria-hidden="true"

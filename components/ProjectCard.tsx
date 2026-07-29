@@ -17,7 +17,7 @@ export const ProjectCard = ({ project, eager = false }: ProjectCardProps) => {
         href={project.link}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative mx-1.5 mt-1.5 block aspect-video overflow-hidden rounded-[calc(var(--radius)-0.375rem)] border bg-muted outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset"
+        className="relative mx-[9px] mt-[9px] block aspect-video overflow-hidden rounded-[calc(var(--radius)-0.25rem)] border bg-muted outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset"
       >
         <Image
           src={project.image}
@@ -29,7 +29,7 @@ export const ProjectCard = ({ project, eager = false }: ProjectCardProps) => {
         />
       </a>
 
-      <div className="flex flex-1 flex-col gap-3 p-5">
+      <div className="flex flex-1 flex-col gap-3 p-[13px]">
         <a
           href={project.repo ?? project.link}
           target="_blank"

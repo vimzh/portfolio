@@ -24,6 +24,12 @@ export const footerLinks = [
   { label: "resume", href: "/resume.pdf" },
 ];
 
+export const blogCopy = {
+  title: "blogs",
+  description: "Notes on agentic engineering, software, and building products.",
+  backLabel: "back to blogs",
+};
+
 export const nav = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/projects" },

@@ -1,0 +1,103 @@
+---
+title: Introduction to Agentic Engineering
+description: A practical introduction to building AI systems that can reason, use tools, and complete multi-step work reliably.
+date: 2026-07-29
+tags:
+  - agents
+  - engineering
+  - llms
+published: true
+---
+
+Agentic engineering is the practice of building software in which a language model can decide what to do next, act through tools, observe the result, and continue until it reaches a clear stopping condition.
+
+That sounds close to a chatbot, but the engineering problem is different. A chatbot usually produces one response. An agent participates in a loop, changes external state, and must remain useful when its first plan is wrong.
+
+## The core loop
+
+Most agentic systems can be reduced to a small control loop:
+
+1. Read the goal and current state.
+2. Decide on the next action.
+3. Execute that action through a tool.
+4. Record the observation.
+5. Stop, recover, or continue.
+
+```ts
+for (let step = 0; step < maxSteps; step += 1) {
+  const decision = await model.decide({ goal, state, tools });
+
+  if (decision.type === "finish") {
+    return decision.result;
+  }
+
+  const observation = await tools.execute(decision.action);
+  state = state.withObservation(observation);
+}
+
+throw new Error("Agent exceeded its step budget");
+```
+
+The model matters, but the loop around it determines whether the system is predictable, inspectable, and safe enough to use.
+
+## The five parts of an agentic system
+
+### 1. A model
+
+The model interprets the goal, reasons over the available context, and selects an action. Different steps may benefit from different models. Planning may need stronger reasoning, while classification or extraction can often use a smaller model.
+
+### 2. Tools
+
+Tools are explicit capabilities such as searching documentation, reading a file, querying a database, running tests, or creating a pull request. Good tools have narrow inputs, structured outputs, and errors that tell the agent how to recover.
+
+### 3. State
+
+State contains the goal, previous actions, tool results, and any durable facts needed for the next decision. It should be deliberate. Passing an unbounded transcript back to the model is expensive and often makes reasoning worse.
+
+### 4. Control flow
+
+The application, not the model, should own limits, retries, approval gates, and stopping conditions. The model can propose what happens next, but ordinary code should enforce what is allowed to happen.
+
+### 5. Evaluation and observability
+
+An agent can produce a convincing final answer after taking a poor path. Record every decision, tool call, result, latency, and failure. Evaluate the complete trajectory, not only the last message.
+
+## Start deterministic
+
+A useful design rule is to keep deterministic work outside the model. Parsing a date, checking permissions, validating a schema, or calculating a price should remain regular code. Use the model where interpretation or judgment is actually required.
+
+The same principle applies to workflows. If the correct sequence is always `fetch → validate → transform → save`, implement that sequence directly. Add agentic decision-making only where the next step genuinely depends on what the system discovers.
+
+## Design tools as contracts
+
+Tool design is one of the highest-leverage parts of agentic engineering. A vague tool such as `manage_repository(command: string)` gives the model too much room to make unsafe or ambiguous choices. Smaller tools such as `read_file`, `search_symbols`, `run_tests`, and `apply_patch` make intent visible and failures easier to diagnose.
+
+Treat model-generated arguments as untrusted input:
+
+- Validate every argument before execution.
+- Restrict paths, commands, and network destinations.
+- Return structured errors instead of pretending an action succeeded.
+- Require human approval before destructive or externally visible actions.
+- Make repeated actions idempotent where possible.
+
+## Budgets are part of the product
+
+Every agent needs explicit budgets: maximum steps, time, tokens, cost, retries, and tool calls. Without them, a recoverable mistake can become an expensive loop.
+
+Budgets also improve the user experience. A system that can say “I stopped after three failed test attempts” is easier to trust than one that spins indefinitely.
+
+## A small example
+
+Consider an agent that upgrades a dependency. It can inspect the package manifest, read the relevant migration guide, update the dependency, run the test suite, and summarize the diff. The agent chooses how to respond to failures, but the application still controls which files it may edit and requires approval before pushing the change.
+
+That separation is important: the agent supplies adaptable reasoning; the surrounding software supplies authority, boundaries, and evidence.
+
+## When not to build an agent
+
+Do not reach for an agent when a normal function, query, or workflow can solve the problem reliably. Agents add latency, cost, nondeterminism, and new failure modes. They are most valuable when the task is multi-step, the path cannot be fully known in advance, and feedback from tools changes what should happen next.
+
+## A sensible first project
+
+Start with one goal, three or four tools, a strict step limit, and a complete trace of every run. Create a small evaluation set before expanding the system. Once the failures are visible, improve the tool contracts and control flow before adding more autonomy.
+
+Agentic engineering is not about giving a model unlimited freedom. It is about designing a reliable system around bounded model judgment.

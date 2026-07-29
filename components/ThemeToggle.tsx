@@ -35,7 +35,9 @@ export const ThemeToggle = () => {
             <Icon icon={Moon02Icon} className="size-4 dark:hidden" />
           </button>
         </TooltipTrigger>
-        <TooltipContent>{resolvedTheme === "dark" ? "Dark" : "Light"}</TooltipContent>
+        <TooltipContent className="pb-2 leading-normal">
+          {resolvedTheme === "dark" ? "Dark" : "Light"}
+        </TooltipContent>
       </Tooltip>
     </TooltipProvider>
   );

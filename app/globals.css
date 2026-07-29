@@ -140,6 +140,83 @@
   }
 }
 
+/* Typography for locally authored MDX posts. */
+.blog-content {
+  @apply leading-7 text-foreground/90;
+}
+
+.blog-content h2 {
+  @apply mt-10 scroll-mt-24 text-2xl tracking-tight text-foreground;
+  font-family: var(--font-eighties-comeback);
+  font-weight: 400;
+}
+
+.blog-content h3 {
+  @apply mt-8 scroll-mt-24 text-lg font-medium tracking-tight text-foreground;
+}
+
+.blog-content p {
+  @apply my-4;
+}
+
+.blog-content a {
+  @apply text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground;
+}
+
+.blog-content strong {
+  @apply font-semibold text-foreground;
+}
+
+.blog-content ul {
+  @apply my-4 list-disc pl-6;
+}
+
+.blog-content ol {
+  @apply my-4 list-decimal pl-6;
+}
+
+.blog-content li {
+  @apply my-2 pl-1;
+}
+
+.blog-content blockquote {
+  @apply my-6 border-l-2 border-border pl-4 text-muted-foreground;
+}
+
+.blog-content pre {
+  @apply my-6 overflow-x-auto rounded-lg border bg-card p-4 font-mono text-sm leading-relaxed;
+}
+
+.blog-content pre code {
+  @apply bg-transparent p-0;
+}
+
+.blog-content pre.shiki,
+.blog-content pre.shiki span {
+  color: var(--shiki-light);
+}
+
+.blog-content pre.shiki {
+  background-color: var(--shiki-light-bg);
+}
+
+.dark .blog-content pre.shiki,
+.dark .blog-content pre.shiki span {
+  color: var(--shiki-dark);
+}
+
+.dark .blog-content pre.shiki {
+  background-color: var(--shiki-dark-bg);
+}
+
+.blog-content :not(pre) > code {
+  @apply rounded bg-muted px-1.5 py-0.5 font-mono text-[0.875em] text-foreground;
+}
+
+.blog-content hr {
+  @apply my-10 border-border;
+}
+
 /* Cinematic page-load entrance. Each direct child of .reveal-stack blurs, fades,
    and lifts into place in a top-to-bottom cascade. The blur resolves by ~60% of
    the timeline so the costly filter-repaint window stays short, while opacity and
