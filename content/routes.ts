@@ -2,6 +2,7 @@ import type { Routes } from "@/types/data";
 
 export const routes = {
   home: "/",
+  about: "/about",
   projects: "/projects",
   blogs: "/blogs",
   resume: "/resume.pdf",

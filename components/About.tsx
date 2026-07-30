@@ -1,8 +1,11 @@
 import { Fragment } from "react";
+import Link from "next/link";
 
 import { Avatar } from "@/components/Avatar";
+import { AboutBio } from "@/components/AboutBio";
 import { NavBar } from "@/components/NavBar";
 import { TextLink } from "@/components/TextLink";
+import { routes } from "@/content/routes";
 import { aboutCopy, socialLinks, user } from "@/content/user";
 
 export const About = () => {
@@ -17,9 +20,7 @@ export const About = () => {
           </TextLink>
         </h1>
         <NavBar />
-        <p className="text-base leading-relaxed text-foreground">
-          {user.bio}
-        </p>
+        <AboutBio />
         <p className="text-base leading-relaxed text-foreground">
           {aboutCopy.socialsLeadIn}{" "}
           {socialLinks.map((social, index) => (
@@ -30,6 +31,16 @@ export const About = () => {
           ))}
           .
         </p>
+        <p className="text-base leading-relaxed text-foreground">
+          {aboutCopy.emailLeadIn}{" "}
+          <TextLink href={`mailto:${user.email}`}>{user.email}</TextLink>.
+        </p>
+        <Link
+          href={routes.about}
+          className="self-center rounded-sm text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:underline focus-visible:outline-none"
+        >
+          {aboutCopy.moreLabel}
+        </Link>
       </div>
     </section>
   );

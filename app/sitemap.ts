@@ -10,7 +10,11 @@ export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  const pages = navigation.map(({ href }) => ({
+  const pageRoutes = [
+    ...navigation.map(({ href }) => href),
+    routes.about,
+  ];
+  const pages = pageRoutes.map((href) => ({
     url: new URL(href, site.url).toString(),
     lastModified,
     changeFrequency: "monthly" as const,

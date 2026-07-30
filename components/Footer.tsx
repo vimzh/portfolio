@@ -1,5 +1,5 @@
 import { TextLink } from "@/components/TextLink";
-import { footerCopy, footerLinks } from "@/content/site";
+import { footerAction, footerCopy, footerLinks } from "@/content/site";
 import { user } from "@/content/user";
 
 export const Footer = () => {
@@ -15,6 +15,7 @@ export const Footer = () => {
             {link.label}
           </TextLink>
         ))}
+        <TextLink href={footerAction.href}>{footerAction.label}</TextLink>
       </div>
     </footer>
   );

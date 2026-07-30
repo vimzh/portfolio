@@ -1,10 +1,17 @@
 import type { AboutCopy, Link, User } from "@/types/data";
 
+export const bioCopy = {
+  summary:
+    "I’m a full-stack developer obsessed with AI and clean, minimal interfaces. I love building things from scratch, figuring out hard problems and shipping fast. Most of my time goes into writing code, contributing to open source and exploring what’s possible with LLMs. Always open to interesting projects and collaborations.",
+  contactLeadIn: "If you’re working on something cool,",
+  contactLabel: "let’s talk.",
+} as const;
+
 export const user = {
   name: "vansh",
   alias: "vimzh",
   email: "vimzh.dev@gmail.com",
-  bio: "I’m a full-stack developer obsessed with AI and clean, minimal interfaces. I love building things from scratch, figuring out hard problems and shipping fast. Most of my time goes into writing code, contributing to open source and exploring what’s possible with LLMs. Always open to interesting projects and collaborations. If you’re working on something cool, let’s talk.",
+  bio: `${bioCopy.summary} ${bioCopy.contactLeadIn} ${bioCopy.contactLabel}`,
   avatars: ["/avatar.jpeg", "/avatar-2.jpeg", "/avatar-3.jpeg"],
   accounts: {
     github: {
@@ -48,4 +55,7 @@ export const aboutCopy = {
   greeting: "hi i’m",
   aliasConnector: "aka",
   socialsLeadIn: "you can find me on",
+  emailLeadIn: "you can email me at",
+  moreLabel: "more",
+  pageTitle: "about",
 } as const satisfies AboutCopy;

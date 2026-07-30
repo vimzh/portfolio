@@ -27,6 +27,9 @@ export type AboutCopy = {
   greeting: string;
   aliasConnector: string;
   socialsLeadIn: string;
+  emailLeadIn: string;
+  moreLabel: string;
+  pageTitle: string;
 };
 
 export type WorkEntry = {
@@ -66,6 +69,7 @@ export type Site = {
 
 export type Routes = {
   home: string;
+  about: string;
   projects: string;
   blogs: string;
   resume: string;

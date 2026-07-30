@@ -30,9 +30,13 @@ export const navigation = [
 
 export const footerLinks = [
   { label: "github", href: user.accounts.github.href },
-  { label: "email", href: `mailto:${user.email}` },
   { label: "resume", href: routes.resume },
 ] as const satisfies readonly Link[];
+
+export const footerAction = {
+  label: "let’s talk",
+  href: `mailto:${user.email}`,
+} as const satisfies Link;
 
 export const footerCopy = {
   prefix: "built with love by",
