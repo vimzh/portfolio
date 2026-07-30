@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { Icon } from "@/components/Icon";
 
-import type { Project } from "@/types/data";
+import type { Project } from "@/types/portfolio";
 
 type ProjectCardProps = {
   project: Project;

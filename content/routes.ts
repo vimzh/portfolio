@@ -1,4 +1,4 @@
-import type { Routes } from "@/types/data";
+import type { Routes } from "@/types/site";
 
 export const routes = {
   home: "/",

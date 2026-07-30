@@ -1,7 +1,8 @@
 import { routes } from "@/content/routes";
 import { user } from "@/content/user";
 
-import type { Link, Site } from "@/types/data";
+import type { Link } from "@/types/common";
+import type { Site } from "@/types/site";
 
 export const site = {
   name: user.name,

@@ -61,7 +61,7 @@ layouts.
 | `content/contributions.ts` | GitHub contribution section copy |
 | `content/blog.ts` | Blog index and navigation copy |
 | `content/routes.ts` | Internal routes and machine-readable endpoints |
-| `types/data.ts` | Shared contracts that validate the content modules |
+| `types/*.ts` | Domain contracts that validate the content modules |
 
 Images, the resume, and other static files live under `public/`. Replace the
 avatar files, project screenshots, and `public/resume.pdf` when adapting the

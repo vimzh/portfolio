@@ -1,4 +1,5 @@
-import type { Contribution, Link } from "@/types/data";
+import type { Link } from "@/types/common";
+import type { Contribution } from "@/types/portfolio";
 
 export const openSourceCopy = {
   heading: "open source",

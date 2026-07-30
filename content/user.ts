@@ -1,4 +1,5 @@
-import type { AboutCopy, Link, User } from "@/types/data";
+import type { Link } from "@/types/common";
+import type { AboutCopy, User } from "@/types/profile";
 
 export const bioCopy = {
   summary:

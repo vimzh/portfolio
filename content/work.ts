@@ -1,4 +1,4 @@
-import type { WorkEntry } from "@/types/data";
+import type { WorkEntry } from "@/types/profile";
 
 export const workCopy = {
   heading: "work",
