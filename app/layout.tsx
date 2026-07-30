@@ -6,10 +6,13 @@ import { JsonLd } from "@/components/JsonLd";
 import { MetaColor } from "@/components/MetaColor";
 import { SelectionColor } from "@/components/SelectionColor";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { metaThemeColors, profile, site } from "@/lib/data";
+import { routes } from "@/content/routes";
+import { site } from "@/content/site";
+import { user } from "@/content/user";
 import { getProfileJsonLd } from "@/lib/json-ld";
+import { metaThemeColors } from "@/lib/theme";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 import type { Metadata, Viewport } from "next";
 
@@ -36,12 +39,12 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description: site.description,
-  keywords: site.keywords,
+  keywords: [...site.keywords],
   alternates: {
-    canonical: "/",
+    canonical: routes.home,
   },
-  authors: [{ name: profile.name, url: profile.handleUrl }],
-  creator: profile.name,
+  authors: [{ name: user.name, url: user.accounts.x.href }],
+  creator: user.name,
   openGraph: {
     type: "website",
     url: site.url,
@@ -53,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: site.title,
     description: site.description,
-    creator: profile.handle,
+    creator: user.accounts.x.handle,
   },
 };
 

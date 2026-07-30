@@ -1,5 +1,6 @@
 import { getPublishedPosts } from "@/lib/blog";
-import { nav, site } from "@/lib/data";
+import { routes } from "@/content/routes";
+import { navigation, site } from "@/content/site";
 
 import type { MetadataRoute } from "next";
 
@@ -9,11 +10,11 @@ export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  const pages = nav.map(({ href }) => ({
+  const pages = navigation.map(({ href }) => ({
     url: new URL(href, site.url).toString(),
     lastModified,
     changeFrequency: "monthly" as const,
-    priority: href === "/" ? 1 : 0.8,
+    priority: href === routes.home ? 1 : 0.8,
   }));
 
   const posts = getPublishedPosts().map((post) => ({

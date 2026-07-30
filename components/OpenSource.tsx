@@ -7,13 +7,17 @@ import {
 
 import { Icon } from "@/components/Icon";
 import { TextLink } from "@/components/TextLink";
-import { moreContributions, openSource } from "@/lib/data";
+import {
+  moreContributions,
+  openSource,
+  openSourceCopy,
+} from "@/content/open-source";
 
 export const OpenSource = () => {
   return (
     <section className="flex w-full flex-col gap-6">
       <h2 className="font-heading text-xl font-normal tracking-tight text-foreground">
-        open source
+        {openSourceCopy.heading}
       </h2>
       <ul className="flex flex-col divide-y divide-border">
         {openSource.map((item) => (
@@ -61,9 +65,9 @@ export const OpenSource = () => {
         <li className="py-4 text-sm text-muted-foreground first:pt-0 last:pb-0">
           +{" "}
           {moreContributions.map((item, index) => (
-            <Fragment key={item.name}>
+            <Fragment key={item.label}>
               {index > 0 && ", "}
-              <TextLink href={item.link}>{item.name}</TextLink>
+              <TextLink href={item.href}>{item.label}</TextLink>
             </Fragment>
           ))}
         </li>

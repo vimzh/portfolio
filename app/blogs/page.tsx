@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 import { NavBar } from "@/components/NavBar";
+import { blogCopy } from "@/content/blog";
 import { formatBlogDate, getPublishedPosts } from "@/lib/blog";
-import { blogCopy } from "@/lib/data";
 
 import type { Metadata } from "next";
 

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 type AvatarProps = {
-  images: string[];
+  images: readonly string[];
   alt: string;
 };
 

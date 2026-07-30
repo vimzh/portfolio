@@ -1,15 +1,17 @@
-import { site, socials } from "@/lib/data";
+import { routes } from "@/content/routes";
+import { llmsCopy, site } from "@/content/site";
+import { socialLinks } from "@/content/user";
 
 const content = `# ${site.name}
 
 > ${site.description}
 
-- [About](${site.url}/about.md): A quick intro to me, how to reach me, and where to find me online.
-- [Work](${site.url}/work.md): Roles I've held and where I'm working now.
+- [${llmsCopy.index.aboutLabel}](${new URL(routes.aboutMarkdown, site.url)}): ${llmsCopy.index.aboutDescription}
+- [${llmsCopy.index.workLabel}](${new URL(routes.workMarkdown, site.url)}): ${llmsCopy.index.workDescription}
 
-## Links
+## ${llmsCopy.index.linksHeading}
 
-${socials.map((social) => `- [${social.label}](${social.href})`).join("\n")}
+${socialLinks.map((social) => `- [${social.label}](${social.href})`).join("\n")}
 `;
 
 export const revalidate = false;

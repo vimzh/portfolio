@@ -1,10 +1,12 @@
 import { NavBar } from "@/components/NavBar";
 import { TextLink } from "@/components/TextLink";
+import { routes } from "@/content/routes";
+import { notFoundCopy } from "@/content/site";
 
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "page not found",
+  title: notFoundCopy.metadataTitle,
 };
 
 export default function NotFound() {
@@ -13,11 +15,11 @@ export default function NotFound() {
       <div className="flex w-full flex-col gap-6">
         <NavBar />
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          404, page not found
+          {notFoundCopy.heading}
         </h1>
         <p className="text-base leading-relaxed text-muted-foreground">
-          this page doesn’t exist or has moved. head back{" "}
-          <TextLink href="/">home</TextLink>.
+          {notFoundCopy.message}{" "}
+          <TextLink href={routes.home}>{notFoundCopy.homeLabel}</TextLink>.
         </p>
       </div>
     </main>

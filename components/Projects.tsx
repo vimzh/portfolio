@@ -4,7 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 
 import { ProjectCard } from "@/components/ProjectCard";
-import { projects } from "@/lib/data";
+import { projects, projectsCopy } from "@/content/projects";
+import { routes } from "@/content/routes";
 
 const PROJECTS_PER_PAGE = 4;
 
@@ -22,7 +23,7 @@ export const Projects = ({ featured = false }: ProjectsProps) => {
   return (
     <section className="flex w-full flex-col gap-6">
       <h2 className="font-heading text-xl font-normal tracking-tight text-foreground">
-        projects
+        {projectsCopy.heading}
       </h2>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {visibleProjects.map((project, index) => (
@@ -36,15 +37,15 @@ export const Projects = ({ featured = false }: ProjectsProps) => {
           className="self-center rounded-sm text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:underline focus-visible:outline-none"
           onClick={() => setVisibleCount((count) => count + PROJECTS_PER_PAGE)}
         >
-          more
+          {projectsCopy.moreLabel}
         </button>
       )}
       {featured && projects.length > 2 && (
         <Link
-          href="/projects"
+          href={routes.projects}
           className="self-center rounded-sm text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:underline focus-visible:outline-none"
         >
-          see all
+          {projectsCopy.seeAllLabel}
         </Link>
       )}
     </section>

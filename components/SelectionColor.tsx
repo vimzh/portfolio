@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-import { selectionHues } from "@/lib/data";
+const selectionHues = [266, 95, 160, 350, 230, 50];
 
 export const SelectionColor = () => {
   useEffect(() => {

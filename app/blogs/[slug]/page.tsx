@@ -2,13 +2,14 @@ import { notFound } from "next/navigation";
 
 import { NavBar } from "@/components/NavBar";
 import { TextLink } from "@/components/TextLink";
+import { blogCopy } from "@/content/blog";
+import { routes } from "@/content/routes";
 import {
   formatBlogDate,
   getBlogPostSlug,
   getPublishedPost,
   getPublishedPosts,
 } from "@/lib/blog";
-import { blogCopy } from "@/lib/data";
 import { getMDXComponents } from "@/mdx-components";
 
 import type { Metadata } from "next";
@@ -63,7 +64,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <NavBar />
       <article className="flex w-full flex-col gap-10">
         <header className="flex flex-col gap-4 border-b border-border pb-8">
-          <TextLink href="/blogs" className="w-fit text-sm">
+          <TextLink href={routes.blogs} className="w-fit text-sm">
             {blogCopy.backLabel}
           </TextLink>
           <div className="flex flex-col gap-3">

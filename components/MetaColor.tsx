@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { useTheme } from "next-themes";
 
-import { metaThemeColors } from "@/lib/data";
+import { metaThemeColors } from "@/lib/theme";
 
 /**
  * Keeps the browser chrome color (`meta[name="theme-color"]`) in sync with the

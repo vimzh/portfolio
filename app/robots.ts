@@ -1,4 +1,5 @@
-import { site } from "@/lib/data";
+import { routes } from "@/content/routes";
+import { site } from "@/content/site";
 
 import type { MetadataRoute } from "next";
 
@@ -9,9 +10,9 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
-      allow: "/",
+      allow: routes.home,
     },
-    sitemap: new URL("/sitemap.xml", site.url).toString(),
+    sitemap: new URL(routes.sitemap, site.url).toString(),
     host: site.url,
   };
 }

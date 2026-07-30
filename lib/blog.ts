@@ -3,8 +3,10 @@ import { format, parseISO } from "date-fns";
 import { loader } from "fumadocs-core/source";
 import { toFumadocsSource } from "fumadocs-mdx/runtime/server";
 
+import { routes } from "@/content/routes";
+
 export const blog = loader({
-  baseUrl: "/blogs",
+  baseUrl: routes.blogs,
   source: toFumadocsSource(blogPosts, []),
 });
 

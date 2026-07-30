@@ -1,6 +1,7 @@
-import { work } from "@/lib/data";
+import { llmsCopy } from "@/content/site";
+import { work } from "@/content/work";
 
-const content = `# Work
+const content = `# ${llmsCopy.work.title}
 
 ${work
   .map((item) => `## ${item.role} | ${item.company}\n\n${item.period}`)

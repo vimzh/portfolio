@@ -1,19 +1,20 @@
-import { profile, site, socials } from "@/lib/data";
+import { llmsCopy, site } from "@/content/site";
+import { socialLinks, user } from "@/content/user";
 
-const content = `# About
+const content = `# ${llmsCopy.about.title}
 
-${profile.bio}
+${user.bio}
 
-## Contact
+## ${llmsCopy.about.contactHeading}
 
-- Name: ${profile.name}
-- Handle: ${profile.handle}
-- Email: ${profile.email}
-- Website: ${site.url}
+- ${llmsCopy.about.nameLabel}: ${user.name}
+- ${llmsCopy.about.handleLabel}: ${user.accounts.x.handle}
+- ${llmsCopy.about.emailLabel}: ${user.email}
+- ${llmsCopy.about.websiteLabel}: ${site.url}
 
-## Social Links
+## ${llmsCopy.about.socialLinksHeading}
 
-${socials.map((social) => `- [${social.label}](${social.href})`).join("\n")}
+${socialLinks.map((social) => `- [${social.label}](${social.href})`).join("\n")}
 `;
 
 export const revalidate = false;

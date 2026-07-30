@@ -1,10 +1,11 @@
 import { NavBar } from "@/components/NavBar";
 import { Projects } from "@/components/Projects";
+import { projectsCopy } from "@/content/projects";
 
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "projects",
+  title: projectsCopy.heading,
 };
 
 export default function ProjectsPage() {

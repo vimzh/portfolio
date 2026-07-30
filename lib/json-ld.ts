@@ -1,4 +1,5 @@
-import { profile, site, socials } from "@/lib/data";
+import { site } from "@/content/site";
+import { socialLinks, user } from "@/content/user";
 
 const PERSON_ID = `${site.url}/#person`;
 const WEBSITE_ID = `${site.url}/#website`;
@@ -14,13 +15,13 @@ export const getProfileJsonLd = () => ({
     {
       "@type": "Person",
       "@id": PERSON_ID,
-      name: profile.name,
-      alternateName: profile.handle,
-      description: profile.bio,
+      name: user.name,
+      alternateName: user.accounts.x.handle,
+      description: user.bio,
       url: site.url,
-      image: new URL(profile.avatars[0], site.url).toString(),
-      email: `mailto:${profile.email}`,
-      sameAs: socials.map((social) => social.href),
+      image: new URL(user.avatars[0], site.url).toString(),
+      email: `mailto:${user.email}`,
+      sameAs: socialLinks.map((social) => social.href),
     },
     {
       "@type": "WebSite",
