@@ -10,7 +10,6 @@ export type User = {
   alias: string;
   email: string;
   bio: string;
-  avatars: readonly string[];
   accounts: {
     github: UserAccount;
     x: UserAccount;
@@ -25,7 +24,6 @@ export type AboutCopy = {
   aliasConnector: string;
   socialsLeadIn: string;
   emailLeadIn: string;
-  moreLabel: string;
   pageTitle: string;
 };
 

@@ -17,7 +17,7 @@ export default function NotFound() {
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
           {notFoundCopy.heading}
         </h1>
-        <p className="text-base leading-relaxed text-muted-foreground">
+        <p className="text-[15px] leading-relaxed text-muted-foreground">
           {notFoundCopy.message}{" "}
           <TextLink href={routes.home}>{notFoundCopy.homeLabel}</TextLink>.
         </p>

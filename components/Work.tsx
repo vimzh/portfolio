@@ -13,7 +13,7 @@ export const Work = () => {
             className="flex items-baseline justify-between gap-4"
           >
             <div className="flex items-baseline gap-1.5 text-sm">
-              <span className="text-base font-medium text-foreground">
+              <span className="text-[15px] font-medium text-foreground">
                 {item.isPrivate ? (
                   <span className="blur-[3px] transition-all select-none pointer-events-none">
                     {item.company}

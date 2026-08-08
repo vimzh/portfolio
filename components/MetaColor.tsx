@@ -5,11 +5,6 @@ import { useTheme } from "next-themes";
 
 import { metaThemeColors } from "@/lib/theme";
 
-/**
- * Keeps the browser chrome color (`meta[name="theme-color"]`) in sync with the
- * resolved theme. next-themes toggles a class, which the media-query based meta
- * tag would otherwise ignore, leaving the chrome stuck on the OS preference.
- */
 export const MetaColor = () => {
   const { resolvedTheme } = useTheme();
 

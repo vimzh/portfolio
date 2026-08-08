@@ -1,5 +1,6 @@
 export type Site = {
   name: string;
+  browserTitle: string;
   title: string;
   description: string;
   url: string;

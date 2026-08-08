@@ -35,7 +35,7 @@ const eightiesComeback = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: site.title,
+    default: site.browserTitle,
     template: `%s · ${site.name}`,
   },
   description: site.description,
@@ -80,8 +80,7 @@ export default function RootLayout({
         <SelectionColor />
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
           disableTransitionOnChange
         >
           <Analytics />

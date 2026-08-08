@@ -6,6 +6,7 @@ import type { Site } from "@/types/site";
 
 export const site = {
   name: user.name,
+  browserTitle: "$whoami",
   title: `${user.name}, full-stack developer`,
   description:
     "Full-stack developer obsessed with AI and clean, minimal interfaces. Building from scratch, contributing to open source and exploring what's possible with LLMs.",

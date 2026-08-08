@@ -53,7 +53,7 @@ layouts.
 
 | File | Responsibility |
 | --- | --- |
-| `content/user.ts` | Name, bio, email, avatars, social accounts, and About copy |
+| `content/user.ts` | Name, bio, email, social accounts, and About copy |
 | `content/site.ts` | Site metadata, navigation, footer, not-found, and LLM copy |
 | `content/projects.ts` | Project entries and Projects section labels |
 | `content/work.ts` | Work history and Work section labels |
@@ -64,8 +64,7 @@ layouts.
 | `types/*.ts` | Domain contracts that validate the content modules |
 
 Images, the resume, and other static files live under `public/`. Replace the
-avatar files, project screenshots, and `public/resume.pdf` when adapting the
-portfolio.
+project screenshots and `public/resume.pdf` when adapting the portfolio.
 
 This structure is content-driven rather than a generic theme engine. The
 existing layout and visual system remain intentionally opinionated; changing
@@ -80,7 +79,7 @@ components/           Portfolio sections and shared UI components
 content/              Typed portfolio data and interface copy
 content/blog/         MDX blog posts
 lib/                  Blog, GitHub, JSON-LD, theme, and utility logic
-public/               Avatars, project images, and resume
+public/               Project images and resume
 types/                Shared TypeScript content contracts
 source.config.ts      Fumadocs collection and frontmatter schema
 ```

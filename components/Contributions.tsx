@@ -21,7 +21,7 @@ export const Contributions = async () => {
       {data.length > 0 ? (
         <ContributionGraphView data={data} />
       ) : (
-        <p className="text-base leading-relaxed text-muted-foreground">
+        <p className="text-[15px] leading-relaxed text-muted-foreground">
           {contributionsCopy.unavailableMessage}
         </p>
       )}

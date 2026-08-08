@@ -22,7 +22,7 @@ export default function AboutPage() {
         </h1>
         <div className="flex flex-col gap-6">
           <AboutBio />
-          <p className="text-base leading-relaxed text-foreground">
+          <p className="text-[15px] leading-relaxed text-foreground">
             {aboutCopy.socialsLeadIn}{" "}
             {socialLinks.map((social, index) => (
               <Fragment key={social.href}>
@@ -32,7 +32,7 @@ export default function AboutPage() {
             ))}
             .
           </p>
-          <p className="text-base leading-relaxed text-foreground">
+          <p className="text-[15px] leading-relaxed text-foreground">
             {aboutCopy.emailLeadIn}{" "}
             <TextLink href={`mailto:${user.email}`}>{user.email}</TextLink>.
           </p>

@@ -19,7 +19,6 @@ export const getProfileJsonLd = () => ({
       alternateName: user.accounts.x.handle,
       description: user.bio,
       url: site.url,
-      image: new URL(user.avatars[0], site.url).toString(),
       email: `mailto:${user.email}`,
       sameAs: socialLinks.map((social) => social.href),
     },
