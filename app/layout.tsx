@@ -7,7 +7,7 @@ import { MetaColor } from "@/components/MetaColor";
 import { SelectionColor } from "@/components/SelectionColor";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { routes } from "@/content/routes";
-import { site } from "@/content/site";
+import { site, socialMetadata } from "@/content/site";
 import { user } from "@/content/user";
 import { getProfileJsonLd } from "@/lib/json-ld";
 import { metaThemeColors } from "@/lib/theme";
@@ -43,20 +43,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: routes.home,
   },
-  authors: [{ name: user.name, url: user.accounts.x.href }],
+  authors: [{ name: user.name, url: new URL(routes.about, site.url).toString() }],
   creator: user.name,
   openGraph: {
-    type: "website",
+    ...socialMetadata.openGraph,
     url: site.url,
-    siteName: site.name,
     title: site.title,
     description: site.description,
   },
   twitter: {
-    card: "summary",
+    ...socialMetadata.twitter,
     title: site.title,
     description: site.description,
-    creator: user.accounts.x.handle,
   },
 };
 

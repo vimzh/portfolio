@@ -9,8 +9,8 @@ export const bioCopy = {
 } as const;
 
 export const user = {
-  name: "vansh",
-  alias: "vimzh",
+  name: "Vansh Gaur",
+  alias: "Vimzh",
   email: "vimzh.dev@gmail.com",
   bio: `${bioCopy.summary} ${bioCopy.contactLeadIn} ${bioCopy.contactLabel}`,
   accounts: {
@@ -22,7 +22,7 @@ export const user = {
     x: {
       label: "x",
       username: "vimzhtwt",
-      handle: "@vimzh",
+      handle: "@vimzhtwt",
       href: "https://x.com/vimzhtwt",
     },
     linkedin: {

@@ -4,11 +4,26 @@ import { NavBar } from "@/components/NavBar";
 import { blogCopy } from "@/content/blog";
 import { formatBlogDate, getPublishedPosts } from "@/lib/blog";
 
+import { routes } from "@/content/routes";
+import { site, socialMetadata } from "@/content/site";
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: blogCopy.title,
   description: blogCopy.description,
+  alternates: { canonical: routes.blogs },
+  openGraph: {
+    ...socialMetadata.openGraph,
+    url: routes.blogs,
+    title: `${blogCopy.title} · ${site.name}`,
+    description: blogCopy.description,
+  },
+  twitter: {
+    ...socialMetadata.twitter,
+    title: `${blogCopy.title} · ${site.name}`,
+    description: blogCopy.description,
+  },
 };
 
 export default function BlogsPage() {

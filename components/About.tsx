@@ -12,7 +12,7 @@ export const About = () => {
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
           {aboutCopy.greeting} {user.name} {aboutCopy.aliasConnector}{" "}
           <TextLink href={user.accounts.x.href}>
-            {user.accounts.x.handle}
+            {user.alias}
           </TextLink>
         </h1>
         <NavBar />

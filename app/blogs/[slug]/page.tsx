@@ -1,5 +1,9 @@
 import { notFound } from "next/navigation";
 
+import { JsonLd } from "@/components/JsonLd";
+import { site, socialMetadata } from "@/content/site";
+import { user } from "@/content/user";
+import { getBlogPostJsonLd } from "@/lib/json-ld";
 import { NavBar } from "@/components/NavBar";
 import { TextLink } from "@/components/TextLink";
 import { blogCopy } from "@/content/blog";
@@ -39,12 +43,19 @@ export async function generateMetadata({
     keywords: post.data.tags,
     alternates: { canonical: post.url },
     openGraph: {
+      ...socialMetadata.openGraph,
       type: "article",
       url: post.url,
       title: post.data.title,
       description: post.data.description,
+      authors: [new URL(routes.about, site.url).toString()],
       publishedTime: `${post.data.date}T00:00:00.000Z`,
       tags: post.data.tags,
+    },
+    twitter: {
+      ...socialMetadata.twitter,
+      title: post.data.title,
+      description: post.data.description,
     },
   };
 }
@@ -61,6 +72,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <main className="reveal-stack flex flex-1 flex-col gap-16 pt-24">
+      <JsonLd data={getBlogPostJsonLd(post)} />
       <NavBar />
       <article className="flex w-full flex-col gap-10">
         <header className="flex flex-col gap-4 border-b border-border pb-8">
@@ -76,6 +88,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+            <span>
+              {blogCopy.bylineLabel}{" "}
+              <TextLink href={routes.about}>{user.name}</TextLink>
+            </span>
             <time dateTime={post.data.date} className="font-mono tabular-nums">
               {formatBlogDate(post.data.date)}
             </time>

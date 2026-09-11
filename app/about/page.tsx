@@ -5,11 +5,26 @@ import { NavBar } from "@/components/NavBar";
 import { TextLink } from "@/components/TextLink";
 import { aboutCopy, socialLinks, user } from "@/content/user";
 
+import { routes } from "@/content/routes";
+import { site, socialMetadata } from "@/content/site";
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: aboutCopy.pageTitle,
   description: user.bio,
+  alternates: { canonical: routes.about },
+  openGraph: {
+    ...socialMetadata.openGraph,
+    url: routes.about,
+    title: `${aboutCopy.pageTitle} · ${site.name}`,
+    description: user.bio,
+  },
+  twitter: {
+    ...socialMetadata.twitter,
+    title: `${aboutCopy.pageTitle} · ${site.name}`,
+    description: user.bio,
+  },
 };
 
 export default function AboutPage() {

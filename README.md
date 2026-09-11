@@ -3,7 +3,7 @@
 A minimal, content-driven personal portfolio built with Next.js 16, React 19,
 Tailwind CSS 4, and Fumadocs MDX.
 
-Live site: [vimzh.dev](https://vimzh.dev)
+Live site: [vimzh.dev](https://www.vimzh.dev)
 
 ## What is included
 
@@ -141,8 +141,23 @@ bunx tsc --noEmit
 bun run build
 ```
 
+With the production server running, check rendered titles, canonicals, social
+metadata, structured data, sitemap URLs, public assets, and the 404 response:
+
+```bash
+python3 scripts/check_seo.py http://localhost:3000
+```
+
+After deployment, run the same check against `https://www.vimzh.dev`. Rerun
+mobile PageSpeed Insights to verify an LCP measurement; the desktop reveal
+animation is intentionally disabled below 640px so mobile content paints immediately.
+
 ## Deployment
 
 The application can run on any platform that supports Next.js. For Vercel,
 import the repository and configure `GITHUB_TOKEN` in the project environment.
 The standard build command is `bun run build`.
+
+The production Vercel project is `vimzh-dev` in `kymidotdev`, connected to
+`vimzh/portfolio` on `main`. `vimzh/vimzh.dev` is a separate repository.
+The canonical host is `www.vimzh.dev`; the apex domain redirects to it.

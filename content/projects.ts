@@ -2,6 +2,7 @@ import type { Project } from "@/types/portfolio";
 
 export const projectsCopy = {
   heading: "projects",
+  description: "Software projects by Vansh Gaur (Vimzh), from web apps to AI agents and developer tools.",
   moreLabel: "more",
   seeAllLabel: "see all",
 } as const;

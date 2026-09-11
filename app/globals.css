@@ -217,12 +217,14 @@
   @apply my-10 border-border;
 }
 
-/* Cinematic page-load entrance. Each direct child of .reveal-stack blurs, fades,
+/* Desktop page-load entrance. Each direct child of .reveal-stack blurs, fades,
    and lifts into place in a top-to-bottom cascade. The blur resolves by ~60% of
    the timeline so the costly filter-repaint window stays short, while opacity and
    transform (compositor-only) carry the rest. Guarded by prefers-reduced-motion so
-   motion-sensitive users see the final state immediately with no animation. */
-@media (prefers-reduced-motion: no-preference) {
+   motion-sensitive users see the final state immediately with no animation.
+   Mobile content paints immediately: hiding every above-the-fold text block
+   behind opacity/blur can prevent Chromium from recording an LCP candidate. */
+@media (min-width: 640px) and (prefers-reduced-motion: no-preference) {
   @keyframes reveal-in {
     0% {
       opacity: 0;
