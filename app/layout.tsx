@@ -23,12 +23,14 @@ const schibstedGrotesk = Schibsted_Grotesk({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  preload: false,
   subsets: ["latin"],
 });
 
 const eightiesComeback = localFont({
-  src: "./fonts/EightiesComebackVAR-Regular.ttf",
+  src: "./fonts/EightiesComebackVAR-Regular.woff2",
   variable: "--font-eighties-comeback",
+  preload: false,
   display: "swap",
 });
 
