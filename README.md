@@ -149,8 +149,9 @@ python3 scripts/check_seo.py http://localhost:3000
 ```
 
 After deployment, run the same check against `https://www.vimzh.dev`. Rerun
-mobile PageSpeed Insights to verify an LCP measurement; the desktop reveal
-animation is intentionally disabled below 640px so mobile content paints immediately.
+mobile and desktop PageSpeed Insights to verify LCP measurements. Desktop sections
+use a transform-only entrance; below 640px the entrance is disabled. Text remains
+visible from initial paint on both layouts.
 
 ## Deployment
 
