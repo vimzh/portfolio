@@ -17,6 +17,8 @@ Live site: [vimzh.dev](https://www.vimzh.dev)
 - Search and machine-readable output through JSON-LD, `sitemap.xml`,
   `robots.txt`, `llms.txt`, `about.md`, and `work.md`.
 - Light and dark themes, responsive layouts, and Vercel Analytics.
+- Configurable Minecraft cursor bees on the homepage, with an unlisted
+  `/playground/bees` demo. See [component usage](components/bees/README.md).
 
 ## Quick start
 

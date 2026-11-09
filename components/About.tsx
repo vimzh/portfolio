@@ -7,7 +7,7 @@ import { aboutCopy, socialLinks, user } from "@/content/user";
 
 export const About = () => {
   return (
-    <section className="flex w-full flex-col items-start gap-8">
+    <section id="home-intro" className="flex w-full flex-col items-start gap-8">
       <div className="flex w-full flex-col gap-6">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
           {aboutCopy.greeting} {user.name} {aboutCopy.aliasConnector}{" "}
